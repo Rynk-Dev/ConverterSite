@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Unit Conversions">
+    <meta name="keywords" content ="">
+    <meta name="author" content="Ryan">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>indexTemplate</title>
+</head>
+<body>
+<!--        NAVBAR           -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Units</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Lab 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Lab 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Lab 3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Lab 4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Lab 5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Lab 6</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--        BODY               -->
+<main class="container p-5 d-flex flex-column align-items-center text-center">
+    <h1>Unit Converter</h1>
+    <form>
+<!-- ................................... UNIT SELECT .................................. -->
+        <div class="mb-3">
+            <h2>Select Unit</h2>
+            <select name="unit" id="unit" class="form-control">
+                <option value="time">Time</option>
+                <option value="distance">Length</option>
+                <option value="distance">Mass</option>
+                <option value="distance">Electric Current</option>
+                <option value="distance">Temperature</option>
+                <option value="distance">Amount</option>
+                <option value="distance">Luminosity</option>
+            </select>
+        </div>
+        <!-- ................................... SOURCE SYSTEM SELECT .................................. -->
+        <div class="row mb-5">
+            <h2>Select Systems</h2>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input src-check" name="system_select" id="si_src_toggle" value="si_src">
+                <label for="si_src_toggle" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input src-check" name="system_select" id="imp_src_toggle" value="imp_src">
+                <label for="imp_src_toggle" class="form-check-label">Imperial</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input src-check" name="system_select" id="si+_src_toggle" value="si+_src">
+                <label for="si+_src_toggle" class="form-check-label">Si+</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input all-check" name="all_select" id="all_src_toggle" value="src-check">
+                <label for="all_src_toggle" class="form-check-label">All</label>
+            </div>
+        </div>
+        <!-- ................................... SOURCE INPUT .................................. -->
+        <div class="input-group mb-4">
+            <label class=input-group-text for="srcNum">From</label>
+            <input type="number" class="form-control" name="srcNum" id="srcNum">
+            <!-- ................................... SOURCE SELECT .................................. -->
+            <select class="form-control" name="srcUnit" id="srcUnit">
+                <option value="empty">Select source unit</option>
+                <optgroup label="SI"  id="si_src" class="dropdown-group">
+                </optgroup>
+                <optgroup label="Imperial" id="imp_src" class="dropdown-group">
+                </optgroup>
+                <optgroup label="Si+" id="si+_src" class="dropdown-group">
+                </optgroup>
+            </select>
+        </div>
+        <!-- ................................... DESTINATION SYSTEM SELECT .................................. -->
+        <div class="row mb-5">
+            <h2>Select Systems</h2>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input dest-check" name="system_select" id="si_dest_toggle" value="si_dest">
+                <label for="si_dest_toggle" class="form-check-label">SI</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input dest-check" name="system_select" id="imp_dest_toggle" value="imp_dest">
+                <label for="imp_dest_toggle" class="form-check-label">Imperial</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input dest-check" name="system_select" id="si+_dest_toggle" value="si+_dest">
+                <label for="si+_dest_toggle" class="form-check-label">Si+</label>
+            </div>
+            <div class="form-check form-switch col">
+                <input type="checkbox" class="form-check-input all-check" name="all_select" id="all_dest_toggle" value="dest-check">
+                <label for="all_dest_toggle" class="form-check-label">All</label>
+            </div>
+        </div>
+        <!-- ................................... DESTINATION OUTPUT .................................. -->
+        <div class="input-group mb-4">
+            <label class=input-group-text for="destNum">To</label>
+            <input type="number" class="form-control" name="destNum" id="destNum" disabled>
+            <!-- ................................... DESTINATION SELECT .................................. -->
+            <select class="form-control" name="destUnit" id="destUnit">
+                <option value="empty">Select destination unit</option>
+                <optgroup label="SI"  id="si_dest" class="dropdown-group">
+                </optgroup>
+                <optgroup label="Imperial" id="imp_dest" class="dropdown-group">
+                </optgroup>
+                <optgroup label="Si+" id="si+_dest" class="dropdown-group">
+                </optgroup>
+            </select>
+        </div>
+        <button id="calculate" class="btn btn-dark mb-4">Convert!</button>
+    </form>
+</main>
+<!--        FOOTER             -->
+<footer class="w-100 p-4 bg-primary text-light">
+    <p class="m-0">COPYRIGHT 2023.<p>
+</footer>
+<script src="js/script.js"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
