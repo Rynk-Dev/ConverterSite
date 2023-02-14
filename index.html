@@ -54,13 +54,14 @@
         <div class="mb-3">
             <h2>Select Unit</h2>
             <select name="unit" id="unit" class="form-control">
+                <option selected disabled>Select a unit</option>
                 <option value="time">Time</option>
-                <option value="distance">Length</option>
-                <option value="distance">Mass</option>
-                <option value="distance">Electric Current</option>
-                <option value="distance">Temperature</option>
-                <option value="distance">Amount</option>
-                <option value="distance">Luminosity</option>
+                <option value="length">Length</option>
+                <option value="mass">Mass</option>
+                <option value="electric current">Electric Current</option>
+                <option value="temperature">Temperature</option>
+                <option value="amount">Amount</option>
+                <option value="luminosity">Luminosity</option>
             </select>
         </div>
         <!-- ................................... SOURCE SYSTEM SELECT .................................. -->
@@ -75,8 +76,8 @@
                 <label for="imp_src_toggle" class="form-check-label">Imperial</label>
             </div>
             <div class="form-check form-switch col">
-                <input type="checkbox" class="form-check-input src-check" name="system_select" id="si+_src_toggle" value="si+_src">
-                <label for="si+_src_toggle" class="form-check-label">Si+</label>
+                <input type="checkbox" class="form-check-input src-check" name="system_select" id="si_pl_src_toggle" value="si_pl_src">
+                <label for="si_pl_src_toggle" class="form-check-label">Si+</label>
             </div>
             <div class="form-check form-switch col">
                 <input type="checkbox" class="form-check-input all-check" name="all_select" id="all_src_toggle" value="src-check">
@@ -90,11 +91,11 @@
             <!-- ................................... SOURCE SELECT .................................. -->
             <select class="form-control" name="srcUnit" id="srcUnit">
                 <option value="empty">Select source unit</option>
-                <optgroup label="SI"  id="si_src" class="dropdown-group">
+                <optgroup label="SI" value="si" id="si_src" class="dropdown-group">
                 </optgroup>
-                <optgroup label="Imperial" id="imp_src" class="dropdown-group">
+                <optgroup label="Imperial" value="imperial" id="imp_src" class="dropdown-group">
                 </optgroup>
-                <optgroup label="Si+" id="si+_src" class="dropdown-group">
+                <optgroup label="SI+" value="siPlus" id="si_pl_src" class="dropdown-group">
                 </optgroup>
             </select>
         </div>
@@ -110,8 +111,8 @@
                 <label for="imp_dest_toggle" class="form-check-label">Imperial</label>
             </div>
             <div class="form-check form-switch col">
-                <input type="checkbox" class="form-check-input dest-check" name="system_select" id="si+_dest_toggle" value="si+_dest">
-                <label for="si+_dest_toggle" class="form-check-label">Si+</label>
+                <input type="checkbox" class="form-check-input dest-check" name="system_select" id="si_pl_dest_toggle" value="si_pl_dest">
+                <label for="si_pl_dest_toggle" class="form-check-label">Si+</label>
             </div>
             <div class="form-check form-switch col">
                 <input type="checkbox" class="form-check-input all-check" name="all_select" id="all_dest_toggle" value="dest-check">
@@ -125,11 +126,11 @@
             <!-- ................................... DESTINATION SELECT .................................. -->
             <select class="form-control" name="destUnit" id="destUnit">
                 <option value="empty">Select destination unit</option>
-                <optgroup label="SI"  id="si_dest" class="dropdown-group">
+                <optgroup label="SI" value="si" id="si_dest" class="dropdown-group">
                 </optgroup>
-                <optgroup label="Imperial" id="imp_dest" class="dropdown-group">
+                <optgroup label="Imperial" value="imperial" id="imp_dest" class="dropdown-group">
                 </optgroup>
-                <optgroup label="Si+" id="si+_dest" class="dropdown-group">
+                <optgroup label="SI+" value="siPlus" id="si_pl_dest" class="dropdown-group">
                 </optgroup>
             </select>
         </div>
